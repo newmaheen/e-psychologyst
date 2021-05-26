@@ -1,0 +1,24 @@
+Migrating: 2020_03_19_170417_create_doctors_table
+
+   Illuminate\Database\QueryException  : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'doctors' already exists (SQL: create table `doctors` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `address` varchar(255) not null, `phone` varchar(255) not null, `last_degree` varchar(255) not null, `email` varchar(100) not null, `is_doctor` tinyint(1) not null default '0', `image` varchar(255) null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\xampp\htdocs\Psychologist\vendor\laravel\framework\src\Illuminate\Database\Connection.php:664
+    660|         // If an exception occurs when attempting to run a query, we'll format the error
+    661|         // message to include the bindings with SQL, which will make this exception a
+    662|         // lot more helpful to the developer instead of just the database's errors.
+    663|         catch (Exception $e) {
+  > 664|             throw new QueryException(
+    665|                 $query, $this->prepareBindings($bindings), $e
+    666|             );
+    667|         }
+    668|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'doctors' already exists")
+      C:\xampp\htdocs\Psychologist\vendor\laravel\framework\src\Illuminate\Database\Connection.php:458
+
+  2   PDOStatement::execute()
+      C:\xampp\htdocs\Psychologist\vendor\laravel\framework\src\Illuminate\Database\Connection.php:458
+
+  Please use the argument -v to see more details.
